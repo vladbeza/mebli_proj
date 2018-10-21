@@ -1,0 +1,40 @@
+{% extends 'MebliShop/base.html' %}
+{% load static %}
+{% block title %}
+    {{ sub_category.sub_category_name }}
+{% endblock %}
+{% block js-head %}
+    <script src="{% static 'js/justify_height.js' %}"></script>
+{% endblock js-head %}
+{% block content %}
+    <div class="items_container">
+        {% for product in sub_category.products.all %}
+        <div class="col-product_review">
+            <div class="product_image">
+                <img class="product_img" src="{{product.image.url}}">
+            </div>
+            <div class="product_name">
+                {{product.product_name}}
+            </div>
+            {% if product.sale_price%}
+            <div class="old_price">
+                {{product.price}} грн.
+            </div>
+            <div class="new_price">
+                {{ product.sale_price }} грн.
+            </div>
+            {% else %}
+            <div class="product_price">
+                {{product.price}} грн.
+            </div>
+            {% endif %}
+            <div class="product_description">
+                {{product.product_description}}
+            </div>
+            <div class="details_btn">
+                <a href="{{product.get_url}}">Подробнее</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'MebliShop/base.html' %}
+{% load static %}
+{% block title %}
+    {{ product.product_name }}
+{% endblock %}
+{% block js-head %}
+<script src="{% static 'js/myscript.js' %}"></script>
+<script src="{% static 'js/jquery.maskedinput.js' %}"></script>
+<script type="text/javascript">
+    jQuery(function($){
+    $(".phone").mask("+38(099) 999-99-99");
+    });
+</script>
+
+
+{% endblock js-head %}
+{% block content %}
+    <div class="main_product_details">
+        <div class="col-3">
+            <img class="col_image" src="{{product.image.url}}">
+        </div>
+        <div class="col-4">
+            <h1>{{product.product_name}}</h1>
+            {% if product.width %}
+            <p><span class="red">Ширина: </span>{{ product.width }}</p>
+            {% endif %}
+            {% if product.height %}
+            <p><span class="red">Высота: </span>{{ product.height }}</p>
+            {% endif %}
+            {% if product.depth %}
+            <p><span class="red">Глубина: </span>{{ product.depth }}</p>
+            {% endif %}
+            <p>{{ product.product_description }}</p>
+            {% if product.sale_price %}
+            <div class="price_details_old" style="text-decoration:line-through;"><span>Старая цена: </span>{{product.price}}грн.</div>
+            <div class="price_details"><span class="red">Новая цена: </span>{{product.sale_price}}грн.</div>
+            {% else %}
+            <div class="price_details"><span class="red">Цена: </span>{{product.price}}грн.</div>
+            {% endif %}
+            <button class="buy_btn" id="buy_btn_id" onclick="openModal()">Купить</button>
+        </div>
+        {% if product.product_full_description %}
+            <div class="col-5"><p>{{product.product_full_description}}</p></div>
+        {% endif %}
+        {% if product.additional_image %}
+            <div class="col-6"><img class="col_image" src="{{product.additional_image.url}}"></div>
+        {% endif %}
+        {% if product.additional_image_2 %}
+            <div class="col-6"><img class="col_image" src="{{product.additional_image_2.url}}"></div>
+        {% endif %}
+        {% if product.additional_image_3 %}
+            <div class="col-6"><img class="col_image" src="{{product.additional_image_3.url}}"></div>
+        {% endif %}
+
+        <div class="modalBuy" id="modalBuyId">
+            <div class="modalContent">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 class="product_name_modal">{{product.product_name}}</h2>
+                {% if product.sale_price %}
+                <p class="modalPrice">Цена: {{product.sale_price}}грн.</p>
+                {% else %}
+                <p class="modalPrice">Цена: {{product.price}}грн.</p>
+                {% endif %}
+                <p class="phone_number">Введите номер вашего телефона</p>
+                <form class="phone-form" action="." method="post">
+                    {% csrf_token %}
+                    <input type="text" class="phone" name="phone_number" required/><br>
+                    <input type="submit" value="Отправить" class="send_phone">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'MebliShop/base.html' %}
+{% load static %}
+{% block title %}
+    Адрес
+{% endblock %}
+{% block js-head %}
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXiO8n5UIx4hJzuLnrr2_2KyhIkQKrv1g&sensor=false">
+    </script>
+    <script src="{% static 'js/g_map.js' %}"></script>
+{% endblock js-head %}
+{% block content %}
+    <h1>г. Харьков, проспект Московский 257</h1>
+    <div id="map-canvas" style="height: 400px; width: 100%;"></div>
+    <p>Вход в офис на фото ниже. После входа направо</p>
+    <img src="{% static 'images/entrance.jpg' %}">
+{% endblock %}

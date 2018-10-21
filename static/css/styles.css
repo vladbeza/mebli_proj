@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+p {
+    padding: 2px;
+}
+
+.form{
+    width: 100%;
+    padding: 20px;
+    display: table;
+}
+
+.field{
+    display: table-row;
+    padding: 20px;
+}
+
+.product_img{
+    height: 200px;
+}
+
+.submit_form{
+    margin:0 auto;
+    display: block;
+    width: 120px;
+    height: 30px;
+    background-color: black;
+    color: white;
+}
+
+.wrapper{
+    display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main_window{
+    flex: 1 0 auto;
+}
+
+.footer{
+    flex: 0 0 auto;
+    background-color: grey;
+}
+
+.footer > div{
+    background-color: grey;
+    width: 50%;
+     float:left;
+}
+
+.thanks p{
+    text-align: left;
+    font-weight: bold;
+    font-family: Times New Roman;
+    margin: 5px;
+    padding: 5px;
+}
+
+.back_btn a, .main_btn a{
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    text-align: center;
+    font-family: Times New Roman;
+    text-decoration: none;
+    display: inline-block;
+    width: 120px;
+}
+
+
+.back_btn a:hover, .main_btn a:hover, .submit_form:hover{
+  background-color: red;
+}
+
+
+.red{
+    color: red
+}
+
+.address{
+    text-align: right;
+    margin: auto;
+    padding: 5px;
+}
+
+.address p{
+    color: white;
+}
+
+.addr{
+    font-weight: bold;
+    color: white;
+}
+
+.addr:hover{
+    color: red;
+}
+
+.tel_phone a{
+    color: black;
+}
+
+.tel_phone a:hover{
+    color: red;
+}
+
+.mySlides {display:none; -webkit-animation: fadeinout 4s linear forwards; max-height: 700px;}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+.w3-display-container {padding:12px}
+
+.product_name_modal{
+    margin: auto;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    width: 50%;
+}
+
+.w3-content{
+    width: 100%;
+}
+
+.modalPrice{
+    margin: auto;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    color: #4CAF50;
+    width: 50%;
+}
+
+.phone_number{
+    margin: auto;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Times New Roman;
+    width: 50%;
+}
+
+.phone-form{
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    font-weight: bold;
+    font-family: Times New Roman;
+    height: 25%;
+}
+
+.phone-form input[type=submit]{
+    margin: auto;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px;
+    border-radius: 50%;
+}
+
+.modalBuy{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modalContent{
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 30%;
+    height: 50%;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+    text-align:center;
+}
+
+/* Add Animation */
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 6px;
+    padding: 6px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buy_btn{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 10px;
+}
+
+.col-3 {width: 30%;}
+.col-4 {width: 60%;}
+.col-5 {width: 100%;}
+.col-6 {width: 45%;}
+
+.items_container{
+  display: table;
+  width: 100%;
+}
+
+.col-product_review{
+    display: table-cell;
+    padding: 10px;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    width: 23%;
+    border: 3px solid;
+    border-radius: 25px;
+    border-color: #f9f9f9;
+    margin: 10px;
+    text-align:center;
+}
+
+.product_description{
+    text-align: left;
+    height: 200px;
+    overflow: auto;
+}
+
+
+.product_name{
+    line-height: 0.8em;
+    display: inline-block;
+    margin: 0 auto;
+    font-family: Times New Roman;
+    padding: 10px;
+    color: red;
+    text-align: center;
+    font-size: 20px;
+}
+
+.details_btn{
+    margin: 0 auto;
+    font-family: Times New Roman;
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.details_btn a{
+    text-decoration: none;
+    font-family: Times New Roman;
+    text-align: center;
+}
+
+.details_btn:hover{
+    background-color: red;
+}
+
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.old_price{
+    width: 50%;
+    margin: 0 auto;
+    font-family: Times New Roman;
+    padding: 5px;
+    text-align: center;
+    color: black;
+    text-decoration:line-through;
+}
+
+.new_price{
+     width: 50%;
+    margin: 0 auto;
+    font-family: Times New Roman;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.product_price{
+    width: 50%;
+    margin: 0 auto;
+    font-family: Times New Roman;
+    padding: 14px 16px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+ /* navbar-mebli container */
+.navbar-mebli {
+  overflow: visible;
+  background-color: #333;
+  font-family: Times New Roman;
+}
+
+/* Links inside the navbar-mebli */
+.navbar-mebli a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.dropbtn{
+    width: 100%;
+}
+
+/* Add a red background color to navbar-mebli links on hover */
+.navbar-mebli a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+@media only screen and (max-width: 760px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        display: block;
+        width: 95%;
+        float: left;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    /* For mobile phones: */
+    .modalContent {
+        width: 90%;
+        height: 70%;
+    }
+    .dropdown {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    /* For mobile phones: */
+    .col_image {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    /* For mobile phones: */
+    .buy_btn {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,18 @@
+{% extends 'MebliShop/base.html' %}
+{% load static %}
+{% block title %}
+    {{ product.product_name }}
+{% endblock %}
+
+{% block content %}
+    <div class="thanks">
+        <p>Спасибо за заявку. Наш менеджер свяжется с Вами в течение ближайшего времени</p>
+        <div class="back_btn">
+            <a href="{{product.get_url}}">Назад к товару</a>
+        </div>
+        <div class="main_btn">
+            <a href="{% url 'MebliShop:main' %}">На главную</a>
+        </div>
+    </div>
+
+{% endblock %}
